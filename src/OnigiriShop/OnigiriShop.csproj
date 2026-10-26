@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -37,4 +37,12 @@
     <InternalsVisibleTo Include="Tests.Unit" />
   </ItemGroup>
 
+  <ItemGroup>
+    <!-- Version corrigée imposée pour supprimer une dépendance vulnérable détectée par NuGet. -->
+    <PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="3.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Version corrigée imposée pour supprimer une dépendance vulnérable détectée par NuGet. -->
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="8.0.2" />
+  </ItemGroup>
 </Project>

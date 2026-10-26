@@ -1,5 +1,5 @@
 # Étape de build
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:8.0.427 AS build
 WORKDIR /src/OnigiriShop
 
 # Installation de LibMan (nécessaire pour restaurer les librairies front)
@@ -17,7 +17,7 @@ RUN libman restore
 RUN dotnet publish -c Release -o /app/publish --no-restore
 
 # Étape runtime
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
+FROM mcr.microsoft.com/dotnet/aspnet:8.0.33 AS runtime
 WORKDIR /app
 COPY --from=build /app/publish .
 
